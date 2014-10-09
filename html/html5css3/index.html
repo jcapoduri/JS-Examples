@@ -1,9 +1,33 @@
-<!DOCTYPE <!DOCTYPE html>
+<!-- 
+Para marcar la version de html es un documento, usame el tag de doctype. siempre primero 
+para html4 el doctype tenia un formato ..
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+pero ahora es tan simple como
+-->
+<!doctype html>
+<!--
+Lo importante del doctype es avisarle al navegador con que tipo de documento esta lidiando, lo cual de no existir, obliga al navegador a inferir el doctype o hacer una primera pasada sobre el documento buscando información que le permitan identificar el tipo de documento que esta lidiandp
+-->
 <html>
-    <head>
-        <link rel="stylesheet" href="style.css" type="text/css" />
-    </head>
-    <body>
-        
-    </body>
-</html>>
+<head>
+<!-- 
+no se han agregado tags nuevos a la seccion head, pero se le ha dado muchisima mayor importancia y valores posibles para el tag meta
+este cobra muchisima importancia en los navegadores moviles
+-->
+    <title> Welcome to the future </title>
+<!--
+   el meta para setear el charset lo hace muy importante para soportar multiples plataformas e idiomas de una manera homogenea y facil
+-->
+    <meta charset="utf-8" />
+<!--
+    El viewport es
+-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+</head>
+
+<body>
+
+</body>
+</html>
