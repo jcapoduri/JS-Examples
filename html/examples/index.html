@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Ejemplos</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/docs.css" type="text/css" />
+  </head>
+  <body class="container">
+    <h1>Ejemplos HTML</h1>
+    <p class="lead">
+      Lorem ipsum
+    </p>
+    
+    <h3>
+      Article
+    </h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Codigo
+          </div>
+          <div class="panel-body">
+            <pre>
+              <code class="html">
+                &lt;article&gt;
+                  this is an article
+                &lt;/article&gt;
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Resultado:
+          </div>
+          <div class="panel-body">
+            <article>
+              this is an article
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h3>
+      Form
+    </h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Codigo
+          </div>
+          <div class="panel-body">
+            <pre contenteditable spellchack="true">
+              <code class="html">
+                &lt;article&gt;
+                  this is an article
+                &lt;/article&gt;
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Resultado:
+          </div>
+          <div class="panel-body">
+            <form>
+              <ul>
+                  <li>color <input type="color"></li>
+                  <li>date <input type="date"></li>
+                  <li>datetime <input type="datetime"></li>
+                  <li>datetime-local <input type="datetime-local"></li>
+                  <li>email <input type="email"></li>
+                  <li>month <input type="month"></li>
+              </ul>
+              <ul>
+                  <li>number <input type="number" min="0" max="10" step="0.5"></li>
+                  <li>range <input type="range" min="0" max="10" step="0.5"></li>
+                  <li>search <input type="search"></li>
+                  <li>tel <input type="tel"></li>
+                  <li>time <input type="time"></li>
+                  <li>url <input type="url"></li>
+                  <li>week <input type="week"></li>
+              </ul>
+              <meter value=75 min=0 max=100 low=20 high=98>75%</meter>
+              <input list="browsers" name="browser">
+              <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+              </datalist>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h3>
+      Video
+    </h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Codigo
+          </div>
+          <div class="panel-body">
+            <pre>
+              <code class="html">
+                &lt;article&gt;
+                  this is an article
+                &lt;/article&gt;
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Resultado:
+          </div>
+          <div class="panel-body">
+            <video controls>
+              <source src="assets/320x240.ogg" type="" media="" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h1> Ejemplos CSS </h1>
+    <p class="lead">
+      Lorem ipsum
+    </p>
+    
+    <h3>
+      selector por item n-nesimo
+    </h3>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Codigo
+          </div>
+          <div class="panel-body">
+            <pre>
+              <code class="html">
+                tr:first-child,
+                tr:last-child {
+                  font-weight: bold;
+                }
+                tr:nth-child(even) {
+                  background-color: #CCC;
+                }
+                tr:nth-child(3) {
+                  color: #CCC;
+                }
+                tr:first-of-type,
+                tr:last-of-type{
+                  text-decoration:line-through;
+                }
+                tr:nth-of-type(odd) {
+                  background-color: #FFF;
+                }
+                tr:nth-of-type(4n) {
+                  color: #E2007A;
+                }
+                tr:nth-of-type(3n-1) {
+                  font-style: italic;
+                }
+              </code>
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            Resultado:
+          </div>
+          <div class="panel-body">
+            <table>
+              <tr><td>Fila 1</td></tr>
+              <tr><td>Fila 2</td></tr>
+              <tr><td>Fila 3</td></tr>
+              <tr><td>Fila 4</td></tr>
+              <tr><td>Fila 5</td></tr>
+              <tr><td>Fila 6</td></tr>
+              <tr><td>Fila 7</td></tr>
+              <tr><td>Fila 8</td></tr>
+              <tr><td>Fila 9</td></tr>
+              <tr><td>Fila 10</td></tr>
+              <tr><td>Fila 11</td></tr>
+              <tr><td>Fila 12</td></tr>
+              <tr><td>Fila 13</td></tr>
+              <tr><td>Fila 14</td></tr>
+              <tr><td>Fila 15</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+/**
+* @author: Jorge Capoduri <jcapoduri@gmail.com>
+* @date: 2014-10-10
+*/
+
+tr:first-child,
+tr:last-child {
+  font-weight: bold;
+}
+tr:nth-child(even) {
+  background-color: #CCC;
+}
+tr:nth-child(3) {
+  color: #CCC;
+}
+tr:first-of-type,
+tr:last-of-type{
+  text-decoration:line-through;
+}
+tr:nth-of-type(odd) {
+  background-color: #FFF;
+}
+tr:nth-of-type(4n) {
+  color: #E2007A;
+}
+tr:nth-of-type(3n-1) {
+  font-style: italic;
+}
+
+input:required {
+  border: 2px solid black;
+}
+input:focus:invalid {
+  border: 1px solid red;
+  background-color: pink;
+}
