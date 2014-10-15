@@ -63,9 +63,77 @@
           <div class="panel-body">
             <pre contenteditable spellchack="true">
               <code class="html">
-                &lt;article&gt;
-                  this is an article
-                &lt;/article&gt;
+                <script type="text/plain">
+            <form role="form">                            
+              <div class="form-group">
+                <label>color</label>
+                <input class="form-control" type="color">
+              </div>
+              <div class="form-group">
+                <label>date</label> 
+                <input class="form-control" type="date">
+              </div>
+              <div class="form-group">
+                <label>datetime</label>
+                <input class="form-control" type="datetime">
+              </div>
+              <div class="form-group">
+                <label>datetime-local</label>
+                <input class="form-control" type="datetime-local">
+              </div>
+              <div class="form-group">
+                <label>email</label>
+                <input class="form-control" type="email">
+              </div>
+              <div class="form-group">
+                <label>month</label>
+                <input class="form-control" type="month">
+              </div>
+              <div class="form-group">
+                <label>number</label>
+                <input class="form-control" type="number" min="0" max="10" step="0.5">
+              </div>
+              <div class="form-group">
+                <label>range</label>
+                <input class="form-control" type="range" min="0" max="10" step="0.5" id="rangeInput">
+              </div>
+              <div class="form-group">
+                <label>search</label>
+                <input class="form-control" type="search">
+              </div>
+              <div class="form-group">
+                <label>tel</label>
+                <input class="form-control" type="tel">
+              </div>
+              <div class="form-group">
+                <label>time</label>
+                <input class="form-control" type="time">
+              </div>
+              <div class="form-group">
+                <label>url</label>
+                <input class="form-control" type="url">
+              </div>
+              <div class="form-group">
+                <label>week</label>
+                <input class="form-control" type="week">
+              </div>
+              <div class="form-group">
+                <label>meter:</label>
+                <meter value=75 min=0 max=100 low=20 high=98>75%</meter>
+              </div>
+              <div class="form-group">
+                <label>datalist: </label>
+                <input list="browsers" name="browser">
+                <datalist id="browsers">
+                  <option value="Internet Explorer">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+              </div>
+            </form>
+                </script>
               </code>
             </pre>
           </div>
@@ -77,37 +145,69 @@
             Resultado:
           </div>
           <div class="panel-body">
-            <form>
-              <ul>
-                  <li>color <input type="color"></li>
-                  <li>date <input type="date"></li>
-                  <li>datetime <input type="datetime"></li>
-                  <li>datetime-local <input type="datetime-local"></li>
-                  <li>email <input type="email"></li>
-                  <li>month <input type="month"></li>
-              </ul>
-              <ul>
-                  <li>number <input type="number" min="0" max="10" step="0.5"></li>
-                  <li>range <input type="range" min="0" max="10" step="0.5"></li>
-                  <li>search <input type="search"></li>
-                  <li>tel <input type="tel"></li>
-                  <li>time <input type="time"></li>
-                  <li>url <input type="url"></li>
-                  <li>week <input type="week"></li>
-              </ul>
-              <meter value=75 min=0 max=100 low=20 high=98>75%</meter>
-              <input list="browsers" name="browser">
-              <datalist id="browsers">
-                <option value="Internet Explorer">
-                <option value="Firefox">
-                <option value="Chrome">
-                <option value="Opera">
-                <option value="Safari">
-              </datalist>
-          </form>
+            <form role="form">                            
+              <div class="form-group"><label>color</label><input class="form-control" type="color"></div>
+              <div class="form-group"><label>date</label><input class="form-control" type="date"></div>
+              <div class="form-group"><label>datetime</label><input class="form-control" type="datetime"></div>
+              <div class="form-group"><label>datetime-local</label><input class="form-control" type="datetime-local"></div>
+              <div class="form-group"><label>email</label><input class="form-control" type="email"></div>
+              <div class="form-group"><label>month</label><input class="form-control" type="month"></div>
+              <div class="form-group"><label>number</label><input class="form-control" type="number" min="0" max="10" step="0.5"></div>
+              <div class="form-group"><label>range</label><input class="form-control" type="range" min="0" max="10" step="0.5" id="rangeInput"></div>
+              <div class="form-group"><label>search</label><input class="form-control" type="search"></div>
+              <div class="form-group"><label>tel</label><input class="form-control" type="tel"></div>
+              <div class="form-group"><label>time</label><input class="form-control" type="time"></div>
+              <div class="form-group"><label>url</label><input class="form-control" type="url"></div>
+              <div class="form-group"><label>week</label><input class="form-control" type="week">              </div>
+              <div class="form-group"><label>meter:</label><meter value=75 min=0 max=100 low=20 high=98>75%</meter></div>
+              <div class="form-group"><label>datalist: </label>
+                <input list="browsers" name="browser">
+                <datalist id="browsers">
+                  <option value="Internet Explorer">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+              </div>
+            </form>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="row">
+      <form role="form">
+        <div class="col-md-6">
+          <div class="form-group"><label>color</label><input class="form-control" type="color"></div>
+          <div class="form-group"><label>date</label><input class="form-control" type="date"></div>
+          <div class="form-group"><label>datetime</label><input class="form-control" type="datetime"></div>
+          <div class="form-group"><label>datetime-local</label><input class="form-control" type="datetime-local"></div>
+          <div class="form-group"><label>email</label><input class="form-control" type="email"></div>
+          <div class="form-group"><label>month</label><input class="form-control" type="month"></div>
+          <div class="form-group"><label>number</label><input class="form-control" type="number" min="0" max="10" step="0.5"></div>
+          <div class="form-group"><label>range</label><input class="form-control" type="range" min="0" max="10" step="0.5" id="rangeInput"></div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group"><label>search</label><input class="form-control" type="search"></div>
+          <div class="form-group"><label>tel</label><input class="form-control" type="tel"></div>
+          <div class="form-group"><label>time</label><input class="form-control" type="time"></div>
+          <div class="form-group"><label>url</label><input class="form-control" type="url"></div>
+          <div class="form-group"><label>week</label><input class="form-control" type="week">              </div>
+          <div class="form-group"><label>meter:</label><meter value=75 min=0 max=100 low=20 high=98>75%</meter></div>
+          <div class="form-group"><label>meter:</label><progress value=75 min=0 max=100 low=20 high=98>75%</progress></div>
+          <div class="form-group"><label>datalist: </label>
+            <input list="browsers" name="browser">
+            <datalist id="browsers">
+              <option value="Internet Explorer">
+              <option value="Firefox">
+              <option value="Chrome">
+              <option value="Opera">
+              <option value="Safari">
+            </datalist>
+          </div>
+        </div>
+      </form>
     </div>
     
     <h3>

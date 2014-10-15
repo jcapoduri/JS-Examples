@@ -34,3 +34,8 @@ input:focus:invalid {
   border: 1px solid red;
   background-color: pink;
 }
+
+script[type="text/plain"] {
+  display: block;
+  overflow: scroll;
+}
