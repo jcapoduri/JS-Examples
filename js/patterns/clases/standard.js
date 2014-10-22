@@ -9,10 +9,10 @@ function personClass (nombre, apellido) {
 
     // de esta manera defino que al momento de invocar una propiedad, puedo
     // invocar una funcion
-    this.__defineGetter__("name", function () { return name; })
-    this.__defineSetter__("name", function (value) { name = value; })
-    this.__defineGetter__("lastname", function () { return lastname; })
-    this.__defineSetter__("lastname", function (value) { lastname = value; })
+    this.__defineGetter__("nombre", function () { return name; })
+    this.__defineSetter__("nombre", function (value) { name = value; })
+    this.__defineGetter__("lastnombre", function () { return lastname; })
+    this.__defineSetter__("lastnombre", function (value) { lastname = value; })
 
     // defino una funcion publica
     this.saludar = function () {
@@ -21,7 +21,7 @@ function personClass (nombre, apellido) {
 };
 
 yo = new personClass();
-yo.name = "Jorge";
-yo.lastname = "Capoduri";
+yo.nombre = "Jorge";
+yo.lastnombre = "Capoduri";
 console.log(yo.saludar());
 console.log(JSON.stringify(yo));
