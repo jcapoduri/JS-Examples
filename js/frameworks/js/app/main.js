@@ -8,14 +8,14 @@ require.config({
         'underscore': 'vendor/underscore/underscore.js',
         'bootstrap': 'vendor/bootstrap/bootstrap.min.js',
         'backbone': 'vendor/backbone/backbone.js',
-        'jquery': 'vendor/jquery/jquery.js',
+        'jquery': 'vendor/jquery/jquery.js'
     },
     shim: {
         jquery: {
             exports: '$'
         },
         backbone: {
-            deps: ['jquery', 'underscore']
+            deps: ['jquery', 'underscore'],
             exports: 'Backbone'
         },
         underscore: {
@@ -24,6 +24,7 @@ require.config({
     }
 });
 
-define([], function () {
-    
+define(['Backbone', 'app/router'], function (Backbone, Router) {
+    var App = new Router();
+    Backbone.History.start()
 });
