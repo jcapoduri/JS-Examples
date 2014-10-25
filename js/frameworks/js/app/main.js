@@ -1,14 +1,16 @@
-require.config({
-    baseUrl: 'js/',
+console.log('asd');
+requirejs.config({
+    baseUrl: 'js',
     paths: {
-        'models': 'app/models',
-        'views': 'app/views',
-        'templates': 'app/templates',
-        'jquery': 'vendor/jquery/jquery.js',
-        'underscore': 'vendor/underscore/underscore.js',
-        'bootstrap': 'vendor/bootstrap/bootstrap.min.js',
-        'backbone': 'vendor/backbone/backbone.js',
-        'jquery': 'vendor/jquery/jquery.js'
+        models: 'app/models',
+        views: 'app/views',
+        templates: 'app/templates',
+        jquery: 'vendor/jquery/jquery',
+        underscore: 'vendor/underscore/underscore',
+        bootstrap: 'vendor/bootstrap/bootstrap.min',
+        backbone: 'vendor/backbone/backbone',
+        jquery: 'vendor/jquery/jquery',
+        text: 'vendor/require/text',
     },
     shim: {
         jquery: {
@@ -24,7 +26,7 @@ require.config({
     }
 });
 
-define(['Backbone', 'app/router'], function (Backbone, Router) {
+requirejs(['backbone', 'app/router'], function (Backbone, Router) {
     var App = new Router();
     Backbone.History.start()
 });
