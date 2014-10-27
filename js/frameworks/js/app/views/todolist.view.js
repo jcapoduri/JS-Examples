@@ -1,24 +1,36 @@
 define(['backbone', 'underscore', 'models/todolist.model', 'views/todo.view', 'text!templates/main.tpl.html'], 
-    function (Backbone, _, ListModel, ListView, tpl) {
-    var todoModel = Backbone.View.extend({
+    function (Backbone, _, todoListModel, todoView, tpl) {
+    var todoModelClass = Backbone.View.extend({
         initialize: function (){
-            this.model = new ListModel();
+            this.model = new todoListModel();
+            this.model.on("add", this.renderNew, this);
+            this._todosViews = [];
+        },        
+        events: {
+            "click button#addTodo": "addList"
         },
-        el: 'div',
-        events: {},
         render: function () {
-            $el.empty();
-            this.model.each(this.renderList, this);
-            $el.append(this.template());
+            this.$el.empty();            
+            _(this._todosViews).each(this.renderList, this);
+            this.$el.append(this.template());
             return this;
         },
-        renderList: function (todo) {
-            var listhtml = new ListView({
-                model: todo
-            }).el;
+        renderNew: function (item) {
+            var view = new todoView({
+                model: item
+            });
+            this._todosViews.push(view);
+            this.render();
         },
-        template: _.template(tpl)        
+        renderList: function (view) {
+            view.delegateEvents();
+            this.$el.append(view.el);
+        },
+        template: _.template(tpl),
+        addList: function () {
+            this.model.addNew();            
+        }
     });
     
-    return todoModel;
+    return todoModelClass;
 });

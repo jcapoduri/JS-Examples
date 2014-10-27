@@ -2,7 +2,11 @@ define(['backbone', 'underscore'], function (Backbone, _) {
     var itemModel = Backbone.Model.extend({
         defaults: {
             done: false,
-            title: ""
+            title: "nuwvo item"
+        },
+        checked: function () {
+            if (this.done) return "checked";
+            return "";
         }
     });
     

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
             compile: {
                 options: {
                     baseUrl: "js",
-                    mainConfigFile: "../js/config.js",
+                    mainConfigFile: "../js/app/main.js",
                     out: "bin/js/main.js",
                     include: ['app/application', 'main.js'],
                     //optimize: 'uglify',
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         cssmin: {
           compile: {
             files: {
-              'bin/styles/style.css': ['styles/normalize.css', 'styles/bootstrap.css', 'styles/bootstrap-theme.css', 'styles/bootstrap-responsive.css', 'styles/yeti.bootstrap.css', 'styles/styles.css', 'styles/jquery-ui.css']
+              'bin/styles/style.css': ['styles/bootstrap.css', 'styles/bootstrap-theme.css', 'styles/bootstrap-responsive.css']
             }
           }
         },

@@ -1,4 +1,3 @@
-console.log('asd');
 requirejs.config({
     baseUrl: 'js',
     paths: {
@@ -28,5 +27,5 @@ requirejs.config({
 
 requirejs(['backbone', 'app/router'], function (Backbone, Router) {
     var App = new Router();
-    Backbone.History.start()
+    Backbone.history.start()
 });

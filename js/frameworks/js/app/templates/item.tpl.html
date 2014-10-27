@@ -1,0 +1,13 @@
+<td>
+    <input type="checkbox" name="complete" <%- done ? 'checked' : '' %> />
+</td>
+<td>
+    <span class="show"> <%= title %> </span>
+    <del class="hidden">  <%= title %>  </del>
+    <input class="hidden" type="text" name="itemname" value=" <%= title %> "/>
+</td>
+<td>
+    <button type="button" id="removeItem" class="btn-xs btn-danger">
+        <span class="glyphicon glyphicon-remove"></span>
+    </button>
+</td>
