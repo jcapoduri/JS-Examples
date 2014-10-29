@@ -15,7 +15,7 @@ define(['backbone', 'underscore', 'models/todo.model', 'views/itemlist.view', 't
         },
         startEdit: function () {
             this.$el.find("h3").removeClass("show").addClass("hidden");
-            this.$el.find("input[type='text']").removeClass("hidden").addClass("show");
+            this.$el.find("divinput[type='text']").removeClass("hidden").addClass("show");
         },
         stopEdit: function () {
             var newValue = this.$el.find("input[type='text']").val();

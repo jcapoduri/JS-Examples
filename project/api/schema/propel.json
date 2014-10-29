@@ -4,10 +4,10 @@
             "connections": {
                 "bookstore": {
                     "adapter": "mysql",
-                    "classname": "Propel\Runtime\Connection\ConnectionWrapper",
-                    "dsn": "mysql:host=localhost;dbname=my_db_name",
-                    "user": "my_db_user",
-                    "password": "s3cr3t",
+                    "classname": "Propel\\Runtime\\Connection\\ConnectionWrapper",
+                    "dsn": "mysql:host=172.17.81.45 ;dbname=c9",
+                    "user": "jcapoduri",
+                    "password": "",
                     "attributes": []
                 }
             }
