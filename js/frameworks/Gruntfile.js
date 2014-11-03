@@ -15,7 +15,7 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'js/<%= pkg.name %>.js',
+                src: 'js/main.js',
                 dest: 'bin/js/<%= pkg.name %>.min.js'
             }
         },
@@ -23,9 +23,9 @@ module.exports = function(grunt) {
             compile: {
                 options: {
                     baseUrl: "js",
-                    mainConfigFile: "../js/app/main.js",
+                    mainConfigFile: "js/app/main.js",
                     out: "bin/js/main.js",
-                    include: ['app/application', 'main.js'],
+                    include: ['app/main.js'],
                     //optimize: 'uglify',
                     normalizeDirDefines: 'all'
                 }
@@ -41,13 +41,13 @@ module.exports = function(grunt) {
         copy: {
           compile: {
             files: [
-              {expand: true, src: ['assets/**'], dest: 'bin/'},
+              {expand: true, src: ['css/**'], dest: 'bin/'},
               {expand: true, src: ['fonts/**'], dest: 'bin/'},
               {expand: true, dot: true, src: ['fonts/api/**'], dest: 'bin/'},
               //{expand: true, dot: true, cwd: 'server/', src: ['**'], dest: 'bin/'},
               {expand: true, src: ['index.html'], dest: 'bin/'},
               {expand: true, src: ['.htaccess'], dest: 'bin/'},
-              {expand: true, cwd: 'js/vendors/requirejs', src: ['require.js'], dest: 'bin/vendors/js'},
+              {expand: true, cwd: 'js/vendor/require', src: ['require.js', 'text.js'], dest: 'bin/js'},
             ]
           }
         },
@@ -58,6 +58,6 @@ module.exports = function(grunt) {
      // Registering grunt tasks
     grunt.registerTask('default', ['uglify']);
 
-    grunt.registerTask('compile', ['clean', 'requirejs', /*'cssmin'*/, 'copy']);
+    grunt.registerTask('compile', ['clean', 'requirejs', 'copy']);
     grunt.registerTask('php', ['copy']);
 };

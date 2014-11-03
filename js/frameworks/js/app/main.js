@@ -1,3 +1,5 @@
+"use strict";
+
 requirejs.config({
     baseUrl: 'js',
     paths: {
@@ -8,7 +10,6 @@ requirejs.config({
         underscore: 'vendor/underscore/underscore',
         bootstrap: 'vendor/bootstrap/bootstrap.min',
         backbone: 'vendor/backbone/backbone',
-        jquery: 'vendor/jquery/jquery',
         text: 'vendor/require/text',
     },
     shim: {
