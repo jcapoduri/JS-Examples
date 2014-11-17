@@ -1,6 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+  error_reporting(E_ALL);
   DEFINE('DNS', 'mysql:host=localhost;dbname=mbb');
   DEFINE('DBUSER', 'root');
   DEFINE('DBPASS', 'Kotipelto.46');
@@ -15,14 +14,13 @@ ini_set('display_errors', 1);
   if (isset($_POST["exampleInputName"])) {
     $query = $db->prepare("INSERT INTO persons (nombre, apellido, email, password, admin) VALUES (?, ?, ?, MD5(?), ?)");
     //$query->bindValue(1, htmlentities($_POST["exampleInputName"]));
-    $query->bindValue(1, $_POST["exampleInputName"]);
-    $query->bindValue(2, $_POST["exampleInputLastname"]);
-    $query->bindValue(3, $_POST["exampleInputEmail"]);
-    $query->bindValue(4, $_POST["exampleInputPassword"]);
+    $query->bindValue(1, htmlentities(strip_tags($_POST["exampleInputName"])));
+    $query->bindValue(2, htmlentities(strip_tags($_POST["exampleInputLastname"])));
+    $query->bindValue(3, htmlentities(strip_tags($_POST["exampleInputEmail"])));
+    $query->bindValue(4, htmlentities(strip_tags($_POST["exampleInputPassword"])));
     $query->bindValue(5, isset($_POST["isAdmin"]) ? true : false);
     $query->execute();
   };
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,6 +28,7 @@ ini_set('display_errors', 1);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="js/vendor/jquery/jquery.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all" />
     <title>Mysql Example</title>
   </head>
@@ -90,12 +89,17 @@ ini_set('display_errors', 1);
               doTr($row["apellido"] . ", " . $row["nombre"]);
               doTr($row["email"]);
               doTr($row["admin"] ? "si" : "no");
-              echo '<td><span class="glyphicon glyphicon-edit"></span><span class="gyphicon glyphicon-remove-circle"></span></td';
+              echo '<td><a href="edit.php?id=' . $row["id"] . '"><span class="glyphicon glyphicon-edit"></span></a>&nbsp;<a href="edit.php?remove=true&id=' . $row["id"] . '"><span class="glyphicon glyphicon-remove-circle"></span></a></td>';
               echo "</tr>";
             };
           ?>          
         </tbody>
       </table>
     </div>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+      });
+    </script>
   </body>
 </html>

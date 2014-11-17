@@ -23,6 +23,7 @@ echo $bm->elapsed() . '<br>';
 
 $test = utf8_encode(json_encode($arr, JSON_PRETTY_PRINT));
 echo $bm->elapsed() . '<br>';
+echo $test;
 //echo json_last_error_msg();
 
 /**/
