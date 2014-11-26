@@ -1,9 +1,11 @@
 <?php
 require_once 'base.model.php';
 
-class item {
-    protected $done = false;
-    protected $text = "";
+class Item extends RESTorm {
+    public function fromJSON($json) {
+        $this->bean->text = $json->text;
+        $this->bean->done = $json->done;
+    }
 }
 
 ?>
