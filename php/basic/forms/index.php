@@ -11,7 +11,7 @@
   <body class="container">
     <div class="col-md-6">
       <h4> Formulario </h4>
-      <form role="form" enctype="multipart/form-data"  target="?" method="POST">
+      <form role="form" enctype="multipart/form-data"  target="" method="POST">
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" placeholder="Enter email">
@@ -27,7 +27,18 @@
         </div>
         <div class="checkbox">
           <label>
-            <input type="checkbox" name="checkValue" value="alo!"> Check me out
+            <input type="checkbox" name="checkValue[]" value="1"> Opcion 1
+            <input type="checkbox" name="checkValue[]" value="2"> Opcion 2
+            <input type="checkbox" name="checkValue[]" value="3"> Opcion 3
+            <input type="checkbox" name="checkValue[]" value="4"> Opcion 4
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="radioValue" value="1"> Opcion 1
+            <input type="radio" name="radioValue" value="2"> Opcion 2
+            <input type="radio" name="radioValue" value="3"> Opcion 3
+            <input type="radio" name="radioValue" value="4"> Opcion 4
           </label>
         </div>
         <button type="submit" class="btn btn-default">Submit</button>

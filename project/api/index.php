@@ -14,7 +14,7 @@ require_once 'vendor/rb.php';
 \Slim\Slim::registerAutoloader();
 $app = new \Slim\Slim(array(
     'cookies.encrypt' => true,
-    'cookies.secret_key' => 'my_secret_key',
+    'cookies.secret_key' => 'newhorsestraplemachine',
     'cookies.cipher' => MCRYPT_RIJNDAEL_256,
     'cookies.cipher_mode' => MCRYPT_MODE_CBC
 ));
@@ -24,8 +24,8 @@ error_reporting(E_ALL);
 //set Auth middleware
 //$app->add(new AuthMiddleware());
 
-R::setup('mysql:host=localhost;dbname=blackfeather', 'root', 'Kotipelto.46');
-//R::setup('mysql:host=127.7.229.1;dbname=c9', 'jcapoduri', '');
+//R::setup('mysql:host=localhost;dbname=blackfeather', 'root', 'Kotipelto.46');
+R::setup('mysql:host=127.7.229.1;dbname=c9', 'jcapoduri', '');
 
 $app->get('/', function () use ($app){
     $response = $app->response();
