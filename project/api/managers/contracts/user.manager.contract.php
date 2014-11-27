@@ -1,6 +1,6 @@
 <?php
 
-interface userManagerContract {
+interface IuserManager {
     public function getUserById($id);
     
     public function singUpUser($username, $email, $password);

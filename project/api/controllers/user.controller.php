@@ -6,14 +6,17 @@ class userController implements basicController {
     protected $manager;
     protected $app;
     
-    public function __construct(userManagerContract $mgr) {
+    public function __construct(IuserManager $mgr) {
         $this->manager = $mgr;
         $this->app = \Slim\Slim::getInstance();
     }
     
     public function getAll() {
         $hash = $this->app->getCookie('auth_token');
-        $user = $manager->getUserFromHash($hash);
+        $user = $this->manager->getUserFromHash($hash);
+        if (is_null($user)) {
+            $this->app->halt(500);
+        };
         $this->app->response->write($user->toJSON());
     }
     
@@ -32,10 +35,13 @@ class userController implements basicController {
         $json_data = $this->app->request->getBody();
         $data = json_decode($json_data);
         $hash = $this->manager->logInUser($data->username, $data->password);
-        $this->app->setCookie("auth_token", $hash, "+1 hour", "/", $_SERVER['SERVER_NAME'], false, true);
+        if (is_null($hash)) {
+            $this->app->halt(500);
+        };
+        $this->app->setCookie("auth_token", $hash, "1 hour", "/", $_SERVER['SERVER_NAME'], false, true);
     }
     
-    public function put($id, $data){}
+    public function put($id) {}
     
     public function delete($id){
         

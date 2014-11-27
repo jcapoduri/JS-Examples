@@ -1,6 +1,6 @@
 <?php
 
-interface todoManagerContract {
+interface ItodoManager {
     public function createTodo($item);
     
     public function updateTodo($id, $item);
