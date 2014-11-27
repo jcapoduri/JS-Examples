@@ -24,9 +24,9 @@ error_reporting(E_ALL);
 //set Auth middleware
 //$app->add(new AuthMiddleware());
 
-define('REDBEAN_MODEL_PREFIX', '')
+define('REDBEAN_MODEL_PREFIX', '');
 //R::setup('mysql:host=localhost;dbname=blackfeather', 'root', 'Kotipelto.46');
-R::setup('mysql:host=127.7.229.1;dbname=c9', 'jcapoduri', '');
+R::setup('mysql:host=127.0.0.1;dbname=c9', 'jcapoduri', '');
 
 $app->get('/', function () use ($app){
     $response = $app->response();

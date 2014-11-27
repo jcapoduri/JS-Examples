@@ -1,11 +1,11 @@
 <?php
 
-require_once '../controllers/todos.controller.php';
-require_once '../managers/todos.manager.php';
+require_once __DIR__.'/../controllers/todo.controller.php';
+require_once __DIR__.'/../managers/todo.manager.php';
 
-$app->group('/todos', function() use ($app) {
-    require_once '../controller/todo.controller.php';
-    require_once '../managers/todo.manager.php';
+$app->group('/todo', function() use ($app) {
+    require_once __DIR__.'/../controller/todo.controller.php';
+    require_once __DIR__.'/../managers/todo.manager.php';
     
     $controller = new todoController(new todoManager());
     

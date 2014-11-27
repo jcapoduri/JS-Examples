@@ -1,17 +1,41 @@
 <?php
-require_once 'contracts/user.manager.contract.php';
-require_once '../models/user.model.php';
-require_once '../helpers/passwordHasher.php';
-
+require_once __DIR__.'/contracts/user.manager.contract.php';
+require_once __DIR__.'/../models/user.model.php';
+require_once __DIR__.'/helpers/passwordHasher.php';
+require_once __DIR__.'/token.manager.php';
 
 class userManager implements userManagerContract {
-    public createUser ($username, $email, $pass) {}
+    public function getUserById($id) {
+        return R::load("user", $id);
+    }
     
-    public validateUser ($userid, $hash) {}
+    public function singUpUser ($username, $email, $pass) {
+        $user = R::dispense("user");
+        $user->username = $username;
+        $user->email = $email;
+        $user->password = passwordHasher::hash($pass);
+        return R::store($user);
+    }
     
-    public startUserSession ($user) {}
+    public function logInUser ($username, $passsword) {
+        $user = R::findOne("user", "username = ? AND password = ?", [
+                    $username,
+                    $password
+                ]);
+        return $user;
+    }
     
-    public removeUserSession ($user) {}
+    public function checkLogin ($hash) {
+        $manager = new tokenManager();
+        return $manager->createToken($hash);
+    }
+    
+    public function getUserFromHash($hash) {
+        $manager = new tokenManager();
+        $id = $manager->checkTokenAnGetUserId($hash);
+        if (is_null($id)) return null;
+        return R::load("user", $id);
+    }
 };
 
 ?>

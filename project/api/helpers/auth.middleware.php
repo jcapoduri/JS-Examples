@@ -1,7 +1,7 @@
 <?php
 
-require_once '../vendor/Slim/Middleware.php';
-require_once 'Auth.php';
+require_once __DIR__.'/../vendor/Slim/Middleware.php';
+require_once __DIR__.'/Auth.php';
 
 class AuthMiddleware extends \Slim\Middleware
 {
