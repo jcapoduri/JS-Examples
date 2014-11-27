@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/contracts/token.manager.contract.php';
-require_once __DIR__.'/../models/todo.model.php';
+require_once __DIR__.'/../models/todo.class.php';
 
 class tokenManager implements tokenManagerContract {
     
@@ -13,7 +13,7 @@ class tokenManager implements tokenManagerContract {
         return (is_null($token)) ? false : true;
     }
     
-    public function checkTokenAnGetUserId($tokenHash) {
+    public function checkTokenAndGetUserId($tokenHash) {
         $token = R::findOne("authtoken", "token = ? and expireAt > curdate()", [$tokenHash]);
         if (is_null($token)) return $token;
         

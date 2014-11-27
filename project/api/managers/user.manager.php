@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/contracts/user.manager.contract.php';
-require_once __DIR__.'/../models/user.model.php';
-require_once __DIR__.'/helpers/passwordHasher.php';
+require_once __DIR__.'/../models/user.class.php';
+require_once __DIR__.'/../helpers/passwordHasher.php';
 require_once __DIR__.'/token.manager.php';
 
 class userManager implements userManagerContract {

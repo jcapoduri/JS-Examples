@@ -1,17 +1,16 @@
 <?php
-require_once __DIR__.'/contracts/token.manager.contract.php';
-require_once __DIR__.'/../models/token.model.php';
+require_once __DIR__.'/contracts/todo.manager.contract.php';
+require_once __DIR__.'/../models/todo.class.php';
 
 
-class tokenManager implements tokenManagerContract {
-    public function createToken(User $user) {
-        
-    }
+class todoManager implements todoManagerContract {
+    public function createTodo($item) {}
     
-    public function checkTokenAnGetUser($tokenHash) {
-        $token = R::findOne("authtoken", "token = ? and expireat > curdate()", [$tokenHash]);
-        
-    }
+    public function updateTodo($id, $item) {}
+    
+    public function deleteTodo($id) {}
+    
+    public function getTodos($user) {}
 };
 
 ?>

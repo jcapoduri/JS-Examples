@@ -6,7 +6,7 @@ interface tokenManagerContract {
     
     public function checkToken($tokenHash);
     
-    public function checkTokenAnGetUserId($tokenHash);
+    public function checkTokenAndGetUserId($tokenHash);
 };
 
 ?>

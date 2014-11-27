@@ -2,7 +2,7 @@
 require_once __DIR__.'/../managers/contracts/user.manager.contract.php';
 require_once __DIR__.'/basic.controller.php';
 
-class userController implements basicController{
+class userController implements basicController {
     protected $manager;
     protected $app;
     
@@ -26,7 +26,7 @@ class userController implements basicController{
         $data = json_decode($json_data);
         $newid = $this->manager->singUpUser($data->username, $data->email, $data->password);
         return $newid;
-    };
+    }
     
     public function login() {
         $json_data = $this->app->request->getBody();
