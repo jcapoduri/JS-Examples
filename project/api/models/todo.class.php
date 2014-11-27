@@ -13,6 +13,8 @@ class Todo extends RESTorm {
             $this->bean->ownItems[] = $todoItem;
         };
     }
+    
+    public function validate($data) {}
 }
 
 ?>

@@ -20,6 +20,8 @@ class AuthToken extends RESTorm {
         
         //TODO check token collission
     }
+    
+    public function validate($data) {}
 }
 
 ?>

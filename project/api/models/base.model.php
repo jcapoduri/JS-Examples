@@ -11,9 +11,9 @@ abstract class RESTorm extends RedBean_SimpleModel {
     abstract public function validate($data);
     
     public function sanitize($data) {
-        return $data
+        return $data;
     }
     
-}
+};
 
 ?>

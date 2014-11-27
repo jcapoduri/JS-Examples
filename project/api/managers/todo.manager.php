@@ -1,10 +1,10 @@
 <?php
-require_once 'contracts/token.manager.contract.php';
-require_once '../models/token.model.php';
+require_once __DIR__.'/contracts/token.manager.contract.php';
+require_once __DIR__.'/../models/token.model.php';
 
 
 class tokenManager implements tokenManagerContract {
-    public function createToken($user) {
+    public function createToken(User $user) {
         
     }
     

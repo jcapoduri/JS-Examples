@@ -6,6 +6,8 @@ class Item extends RESTorm {
         $this->bean->text = $json->text;
         $this->bean->done = $json->done;
     }
+    
+    public function validate($data) {}
 }
 
 ?>

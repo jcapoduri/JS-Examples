@@ -2,7 +2,7 @@
 require_once __DIR__.'/contracts/token.manager.contract.php';
 require_once __DIR__.'/../models/todo.model.php';
 
-class tokenoManager implements tokenManagerContract {
+class tokenManager implements tokenManagerContract {
     
     public function createToken(User $user) {
         $token = R::dispense("authtoken");

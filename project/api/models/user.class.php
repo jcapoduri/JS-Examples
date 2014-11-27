@@ -8,6 +8,8 @@ class User extends RESTorm {
         $this->bean->password = $json->pass;
     }
     
+    
+    public function validate($data) {}
 };
 
 ?>
