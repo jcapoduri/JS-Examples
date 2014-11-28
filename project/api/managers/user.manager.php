@@ -30,18 +30,21 @@ class userManager implements IuserManager {
                 ]);
         if (is_null($user)) return null;
         if (!passwordHasher::check_password($user->password, $password)) return null;
-        return $this->tokenManager->createToken($user);
+        return $this->tokenManager->createToken($user->box());
     }
     
     public function checkLogin ($hash) {
         return $this->tokenManager->checkToken($hash);
     }
     
-    public function getUserFromHash($hash) {
-        $manager = new tokenManager();
-        $id = $manager->checkTokenAndGetUserId($hash);
+    public function getUserFromHash($hash = "") {
+        $id = $this->tokenManager->checkTokenAndGetUserId($hash);
         if (is_null($id)) return null;
         return R::load("user", $id);
+    }
+
+    public function getCurrentUser() {
+        return $this->getUserFromHash();
     }
 };
 

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/base.model.php';
 
-class AuthToken extends RESTorm {
+class Authtoken extends RESTorm {
     public function fromJSON($json) {
         $this->bean->token = $json->token;
         $this->bean->userid = $json->userid;
@@ -10,7 +10,7 @@ class AuthToken extends RESTorm {
     
     public function update() {
         if ($this->bean->expireAt == "") {
-            $this->bean->expireAt = date("+1 hour");
+            $this->bean->expireAt = date('c', strtotime('+1 hour'));
         };
         
         if ($this->bean->token == "") {
@@ -22,6 +22,10 @@ class AuthToken extends RESTorm {
     }
     
     public function validate($data) {}
+
+    public function updateExpirationTime() {
+        $this->bean->expireAt = date('c', strtotime('+1 hour'));
+    }
 }
 
 ?>

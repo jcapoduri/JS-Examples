@@ -10,6 +10,8 @@ interface IuserManager {
     public function checkLogin($hash);
     
     public function getUserFromHash($hash);
+
+    public function getCurrentUser();
 };
 
 ?>

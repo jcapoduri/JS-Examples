@@ -1,17 +1,17 @@
 <?php
 
 require_once __DIR__.'/../vendor/Slim/Middleware.php';
-require_once __DIR__.'/Auth.php';
+require_once __DIR__.'/../managers/contracts/token.manager.contract.php';
 
 class AuthMiddleware extends \Slim\Middleware
 {
-    public $auth;
-    protected $excludedUris = []
+    protected $tokenManager;
+    protected $excludedUris = [];
 
-    public function __construct(array $validUris)
+    public function __construct(ItokenManager $mgr, array $validUris)
     {
       $this->excludedUris = $validUris;
-      $this->auth = new Auth();      
+      $this->tokenManager = $mgr;
     }
 
     /**
@@ -25,18 +25,16 @@ class AuthMiddleware extends \Slim\Middleware
     {
       $request = $this->app->request;
       $response = $this->app->response;
+      $requestUri = $request->getResourceUri();
 
-      //si intenta acceder al login, no valido para que pueda pedir token
-      if (substr($request->getResourceUri(), 0, 6) !== '/login' && substr($request->getResourceUri(), 0, 9) !== '/register') {
-        $ok = $this->auth->authentificate($this->app->getCookie('ACCESS_TOKEN'));
-        if (!$ok) {
-          $response->status(401);
-          $response->write($request->getResourceUri());                  } else {
-            $this->next->call();
+      if (in_array($requestUri, $this->excludedUris) === false) {
+        $token = $this->app->getCookie('auth_token');
+        $authorized = $this->tokenManager->checkToken($token);
+        if (!$authorized) {
+          $this->app->halt(401);
         };
-      } else {
-        $this->next->call();
       };
+      $this->next->call();
     }
 }
 ?>

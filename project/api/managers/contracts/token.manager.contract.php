@@ -7,6 +7,8 @@ interface ItokenManager {
     public function checkToken($tokenHash);
     
     public function checkTokenAndGetUserId($tokenHash);
+
+    public function checkTokenAndUserId($userid, $tokenHash);
 };
 
 ?>

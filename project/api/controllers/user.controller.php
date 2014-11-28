@@ -38,7 +38,7 @@ class userController implements basicController {
         if (is_null($hash)) {
             $this->app->halt(500);
         };
-        $this->app->setCookie("auth_token", $hash, "1 hour", "/", $_SERVER['SERVER_NAME'], false, true);
+        $this->app->setCookie("auth_token", $hash, "1 hour");
     }
     
     public function put($id) {}

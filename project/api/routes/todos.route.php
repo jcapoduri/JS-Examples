@@ -1,10 +1,15 @@
 <?php
 
-$app->group('/todo', function() use ($app) {
+$app->group('/todo', function() {
     require_once __DIR__.'/../controllers/todo.controller.php';
     require_once __DIR__.'/../managers/todo.manager.php';
+    require_once __DIR__.'/../managers/user.manager.php';
+    require_once __DIR__.'/../managers/token.manager.php';
     
-    $controller = new todoController(new todoManager());
+    $usermgr = new userManager(new tokenManager());
+    $todomgr = new todoManager($usermgr);
+
+    $controller = new todoController($todomgr, $usermgr);
     $app = \Slim\Slim::getInstance();
     
     $app->get('/', array($controller, 'getAll'));
