@@ -1,14 +1,13 @@
 <?php
 require_once __DIR__.'/../managers/contracts/user.manager.contract.php';
-require_once __DIR__.'/basic.controller.php';
+require_once __DIR__.'/../helpers/basic.controller.php';
 
-class userController implements basicController {
+class userController extends basicController {
     protected $manager;
-    protected $app;
     
     public function __construct(IuserManager $mgr) {
         $this->manager = $mgr;
-        $this->app = \Slim\Slim::getInstance();
+        parent::__construct();
     }
     
     public function getAll() {

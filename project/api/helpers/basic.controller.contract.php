@@ -1,6 +1,6 @@
 <?php
 
-interface basicController {
+interface IbasicController {
     public function getAll();
     public function get($id);
     public function post();

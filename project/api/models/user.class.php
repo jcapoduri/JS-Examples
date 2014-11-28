@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/base.model.php';
+require_once __DIR__.'/../helpers/base.model.php';
 
 class User extends RESTorm {
     public function fromJSON ($json) {
