@@ -18,10 +18,20 @@ class todoController implements basicController{
         $user = $this->userManager->getCurrentUser();
         $todos = $this->todoManager->getTodos($user);
         $this->app->response->write(json_encode($todos));
+        //$this->app->response->write(json_encode($user->ownTodos));
     }
     
     public function get($id) {}
-    public function post() {}
+    
+    public function post() {
+        $user = $this->userManager->getCurrentUser();
+        $json_data = $this->app->request->getBody();
+        
+        $data = json_decode($json_data);
+        $todo = $this->todoManager->createTodo($data);
+        $result = $this->todoManager->assignTodoToUser($user, $todo);
+        $this->app->response->write($result);
+    }
     public function put($id) {}
     public function delete($id) {}
 };

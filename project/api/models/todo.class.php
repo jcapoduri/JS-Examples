@@ -7,7 +7,7 @@ class Todo extends RESTorm {
         $todoItem = null;
         $this->bean->name = $json->name;
         $this->bean->ownItems = [];
-        foreach($item as $json->items) {
+        foreach( $json->items as $item) {
             $todoItem = R::dispense("item");
             $todoItem->fromJSON($item);
             $this->bean->ownItems[] = $todoItem;

@@ -14,7 +14,7 @@ $app->group('/todo', function() {
     
     $app->get('/', array($controller, 'getAll'));
     $app->get('/:id', array($controller, 'get'));
-    $app->post('/:id', array($controller, 'post'));
+    $app->post('/', array($controller, 'post'));
     $app->put('/:id', array($controller, 'put'));
     $app->delete('/:id', array($controller, 'delete'));
 });

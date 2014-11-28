@@ -19,7 +19,7 @@ $app = new \Slim\Slim(array(
     'cookies.secret_key' => 'newhorsestraplemachine',
     'cookies.cipher' => MCRYPT_RIJNDAEL_256,
     'cookies.cipher_mode' => MCRYPT_MODE_CBC,
-    "debug" => true
+    "debug" => false
 ));
 
 error_reporting(E_ALL);
@@ -33,8 +33,8 @@ $excludedUrls = array (
 $app->add(new AuthMiddleware(new tokenManager(), $excludedUrls));
 
 define('REDBEAN_MODEL_PREFIX', '');
-R::setup('mysql:host=localhost;dbname=c9', 'root', 'Kotipelto.46');
-//R::setup('mysql:host=127.0.0.1;dbname=c9', 'jcapoduri', '');
+//R::setup('mysql:host=localhost;dbname=c9', 'root', 'Kotipelto.46');
+R::setup('mysql:host=127.0.0.1;dbname=c9', 'jcapoduri', '');
 
 $app->error(function (\Exception $e) use ($app) {
     echo "pifia!";
@@ -44,7 +44,8 @@ $app->error(function (\Exception $e) use ($app) {
 $app->get('/', function () use ($app){
     $response = $app->response();
     $response['Content-Type'] = 'application/json';
-    $response->write($app->getCookie("auth_token"));
+    $user = R::load("user", 1);
+    $response->write($user);
 });
 
 foreach (glob("routes/*.route.php") as $filename)

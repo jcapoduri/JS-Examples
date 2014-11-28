@@ -8,15 +8,27 @@ class todoManager implements ItodoManager {
     public function __construct() {
     }
 
-    public function createTodo($item) {}
+    public function createTodo($item) {
+        $todo = R::dispense("todo");
+        $todo->fromJSON($item);
+        return $todo;
+    }
     
     public function updateTodo($id, $item) {}
     
     public function deleteTodo($id) {}
     
     public function getTodos($user) {
-        $todos = $user->ownTodos;
+        $todos = [];
+        foreach($user->ownTodo as $todo) {
+            $todos[] = $todo->export();
+        };
         return $todos;
+    }
+    
+    public function assignTodoToUser($user, $todo) {
+        $user->ownTodo[] = $todo;
+        return R::store($user);
     }
 };
 
