@@ -20,6 +20,7 @@ define(['backbone', 'underscore', 'models/todo.model', 'views/itemlist.view', 't
         stopEdit: function () {
             var newValue = this.$el.find("input[type='text']").val();
             this.model.set("title", newValue);
+            this.model.save();
             this.render();
         },
         render: function () {            
@@ -30,7 +31,7 @@ define(['backbone', 'underscore', 'models/todo.model', 'views/itemlist.view', 't
         },
         template: _.template(tpl),
         addItem: function () {
-            this.model.get("todos").addNewItem();
+            this.model.items.addNewItem();
         }   
     });
     

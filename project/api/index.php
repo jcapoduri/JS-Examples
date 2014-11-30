@@ -33,8 +33,8 @@ $excludedUrls = array (
 $app->add(new AuthMiddleware(new tokenManager(), $excludedUrls));
 
 define('REDBEAN_MODEL_PREFIX', '');
-//R::setup('mysql:host=localhost;dbname=c9', 'root', 'Kotipelto.46');
-R::setup('mysql:host=127.0.0.1;dbname=c9', 'jcapoduri', '');
+R::setup('mysql:host=localhost;dbname=c9', 'root', 'Kotipelto.46');
+//R::setup('mysql:host=127.0.0.1;dbname=c9', 'jcapoduri', '');
 
 $app->error(function (\Exception $e) use ($app) {
     echo "pifia!";

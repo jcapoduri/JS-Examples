@@ -28,5 +28,14 @@ requirejs.config({
 
 requirejs(['backbone', 'app/router'], function (Backbone, Router) {
     var App = new Router();
+    $.ajaxSetup({
+        statusCode: {
+            401: function(){
+                // Redirec the to the login page.
+                window.location.replace('#login');
+             
+            }
+        }
+    });
     Backbone.history.start()
 });

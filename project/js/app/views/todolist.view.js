@@ -3,6 +3,7 @@ define(['backbone', 'underscore', 'models/todolist.model', 'views/todo.view', 't
     var todoModelClass = Backbone.View.extend({
         initialize: function (){
             this.model = new todoListModel();
+            this.model.fetch();
             this.model.on("add", this.renderNew, this);
             this._todosViews = [];
         },        

@@ -3,7 +3,9 @@ define(['backbone', 'underscore', 'models/item.model'],
     var itemListModel = Backbone.Collection.extend({
         initialize: function () {},        
         addNewItem: function () {
-            this.add(new this.model());
+            var newItem = new this.model();
+            this.add(newItem);
+            newItem.save();
         },
         model: itemModel
     });

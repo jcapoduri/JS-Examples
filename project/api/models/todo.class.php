@@ -5,7 +5,7 @@ require_once __DIR__.'/item.class.php';
 class Todo extends RESTorm {
     public function fromJSON($json) {
         $todoItem = null;
-        $this->bean->name = $json->name;
+        $this->bean->title = $json->title;
         $this->bean->ownItems = [];
         foreach ($json->items as $item) {
             $todoItem = R::dispense("item");

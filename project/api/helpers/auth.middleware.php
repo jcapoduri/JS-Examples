@@ -31,10 +31,14 @@ class AuthMiddleware extends \Slim\Middleware
         $token = $this->app->getCookie('auth_token');
         $authorized = $this->tokenManager->checkToken($token);
         if (!$authorized) {
-          $this->app->halt(401);
+          $this->app->response->status(401);          
+        } else {
+          $this->next->call();
         };
-      };
-      $this->next->call();
+      } else {
+        $this->next->call();
+      }
+      
     }
 }
 ?>
